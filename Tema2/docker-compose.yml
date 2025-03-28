@@ -1,0 +1,45 @@
+services:
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    networks:
+      - flask-mongo_network
+      - express-mongo_network
+
+  flask_app:
+    build: .
+    container_name: flask_app
+    ports:
+      - "5000:5000"
+    depends_on:
+      - mongo
+    networks:
+      - flask-mongo_network
+
+  mongo-express:
+    image: mongo-express:latest
+    container_name: mongo-express
+    depends_on:
+      - mongo
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password
+    networks:
+      - express-mongo_network
+
+volumes:
+  mongo_data:
+    driver: local
+
+networks:
+  flask-mongo_network:
+    driver: bridge
+  express-mongo_network:
+    driver: bridge
