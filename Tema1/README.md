@@ -1,7 +1,4 @@
-Ana Elena Diana 342C3
-Tema 1 - Aplicație Client/Server pentru baze de date folosind RPC
-Am folosit 1/3 sleep days pentru aceasta tema.
-
+# Tema 1 - Aplicație Client/Server pentru baze de date folosind RPC
 
 In aceasta tema am implementat un sistem Client-Server folosind protocolul RPC si arhitectura OAuth.
 Sistemul consta in interactiuni intre client si server pentru autentificare, gestionare acces si executare
