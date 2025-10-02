@@ -1,5 +1,4 @@
-Ana Elena Diana 342C3
-Tema 2 - Microservicii & Docker
+# Tema 2 - Microservicii & Docker
 
 In aceasta tema am implementat o aplicatie care gestioneaza o baza de date folosind un REST API.
 
@@ -60,4 +59,5 @@ Utilizare:
   13. GET/api/temperatures/countries/:id_tara?from=Date&until=Date;
   14. PUT/api/temperatures/:id;
   15. DELETE/api/temperatures/:id;
+
 
